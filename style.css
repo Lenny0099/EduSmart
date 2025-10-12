@@ -111,8 +111,9 @@ body {
 }
 
 .services h2 {
-    color: #142bff;
+    color: #5c40fd;
     margin-bottom: 40px;
+    font-size: 2rem;
 }
 
 .service-container {
@@ -138,6 +139,7 @@ body {
     padding: 80px 10%;
     background: white;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .contact h2 {
@@ -191,16 +193,16 @@ footer {
 .floating-buttons {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 23px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     z-index: 2000;
 }
 
 .floating-buttons a img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     box-shadow: 0 3px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -209,5 +211,81 @@ footer {
 .floating-buttons a img:hover {
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Navbar responsive */
+@media (max-width: 650px) {
+    .nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 80px; /* Debajo de la barra */
+        right: -100%; /* Oculto por defecto */
+        width: 120px;
+        background-color: #014e96;
+        height: 200vh;
+        transition: right 0.5s ease;
+        padding-top: 40px;
+    }
+
+    .nav-links li {
+        margin: 10px 10px;
+    }
+
+    .nav-links a {
+        color: white;
+        font-size: 18px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+@keyframes slideIn {
+  from {
+    opacity: 20;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-text h1 {
+  animation: slideIn 1.2s ease-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #0078d7;
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+#servicios {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 55px 0 25px 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 80px 10%;
+    background: linear-gradient(135deg, #19c2fad2, #ffffff);
+}
+#servicios h2 {
+    color: #015eb6;
+    margin-bottom: 40px;
+    font-size: 2rem;
 }
 
