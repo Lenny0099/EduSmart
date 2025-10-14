@@ -49,19 +49,28 @@ body {
 
 /* Hero section */
 .hero {
-    padding: 120px 10%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background: linear-gradient(135deg, #014a63, #ffffff);
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: url("pc.jpg");
+  background-size: cover;
+  background-position: top center 20%;
+  animation: pan 20s ease-in-out infinite alternate;
+
 }
 
 .hero-content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 40px;
+    max-width: 1200px;
 }
 
 .text {
@@ -69,7 +78,7 @@ body {
 }
 
 .text h2 {
-    font-size: 2.3em;
+    font-size: 3.3rem;
     color: #78d9ff;
 }
 
@@ -96,11 +105,10 @@ body {
 .btn:hover {
     background: #008a91;
 }
-
-.image img {
-    width: 300px;
-    border-radius: 30%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
 }
 
 /* Services */
@@ -137,13 +145,13 @@ body {
 /* Contact */
 .contact {
     padding: 80px 10%;
-    background: white;
+    background: linear-gradient(135deg, #00465cd2, #ffffff);
     text-align: center;
     font-size: 1.2rem;
 }
 
 .contact h2 {
-    color: #0a4d8c;
+    color: #ffffff;
     margin-bottom: 30px;
 }
 
@@ -260,17 +268,13 @@ footer {
 
 .hero-text h1 {
   animation: slideIn 1.2s ease-out;
+
 }
 
 button:hover {
   transform: scale(1.05);
   background-color: #0078d7;
   transition: all 0.3s ease;
-}
-
-img:hover {
-  transform: scale(1.03);
-  transition: transform 0.3s ease;
 }
 
 #servicios {
@@ -281,7 +285,7 @@ img:hover {
     font-weight: bold;
     font-size: 1.2rem;
     padding: 80px 10%;
-    background: linear-gradient(135deg, #19c2fad2, #ffffff);
+    background: linear-gradient(135deg, #028cb9d2, #ffffff);
 }
 #servicios h2 {
     color: #015eb6;
@@ -289,3 +293,169 @@ img:hover {
     font-size: 2rem;
 }
 
+/* Mejoras en escritorio */
+@media (min-width: 1024px) {
+  .hero-content {
+    justify-content: space-evenly;
+    gap: 60px;
+  }
+
+  .hero .text {
+    max-width: 500px;
+  }
+
+  .services {
+    padding: 100px 15%;
+  }
+
+  #contact-form {
+    max-width: 600px;
+  }
+}
+
+.text h2 {
+  animation: fadeInDown 1.5s ease;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.connect-section {
+  text-align: center;
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #015c8d, #90e0ef);
+  color: white;
+}
+
+.connect-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.connect-section p {
+  margin-bottom: 25px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-icons a {
+  font-size: 28px;
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.fb:hover { color: #3b5998; }
+.wa:hover { color: #25d366; }
+.ig:hover { color: #e1306c; }
+
+
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #012c2e; }
+  to { text-shadow: 0 0 15px #00c2cb; }
+}
+
+
+.nav-links a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00c2cb;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a:hover {
+  color: #00c2cb;
+}
+
+/* Capa oscura encima de la imagen para resaltar texto */
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Texto sobre la imagen */
+.hero .text {
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
+}
+
+.hero .text h2 {
+  font-size: 3.8em;
+  font-weight: 600;
+  animation: fadeInDown 1.5s ease;
+}
+
+.hero .text span {
+  color: #ffffff;
+}
+
+.hero .text p {
+  margin-top: 20px;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #e6e6e6;
+}
+
+.btn {
+  background: #00c2cb;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 25px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #008a91;
+}
+
+@keyframes zoomIn {
+    from { background-size: cover; } /* Empieza cubriendo */
+    to { background-size: 10%; }    /* Escala solo un 5% extra */
+}
